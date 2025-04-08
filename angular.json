@@ -3,7 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+<<<<<<< HEAD
     "frontend": {
+=======
+    "angularapp": {
+>>>>>>> master
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +27,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+<<<<<<< HEAD
             "outputPath": "dist/frontend",
+=======
+            "outputPath": "dist/angularapp",
+>>>>>>> master
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -37,6 +45,10 @@
               }
             ],
             "styles": [
+<<<<<<< HEAD
+=======
+              "@angular/material/prebuilt-themes/azure-blue.css",
+>>>>>>> master
               "src/styles.css"
             ],
             "scripts": []
@@ -67,12 +79,15 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "configurations": {
             "production": {
-              "buildTarget": "frontend:build:production"
+              "buildTarget": "angularapp:build:production"
             },
             "development": {
-              "buildTarget": "frontend:build:development"
+              "buildTarget": "angularapp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -95,6 +110,10 @@
               }
             ],
             "styles": [
+<<<<<<< HEAD
+=======
+              "@angular/material/prebuilt-themes/azure-blue.css",
+>>>>>>> master
               "src/styles.css"
             ],
             "scripts": []
@@ -102,5 +121,11 @@
         }
       }
     }
+<<<<<<< HEAD
+=======
+  },
+  "cli": {
+    "analytics": "c1443197-c8b1-4d9a-ab41-7f27b1dd4270"
+>>>>>>> master
   }
 }

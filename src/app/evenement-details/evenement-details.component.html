@@ -1,0 +1,78 @@
+
+
+<div fxLayout="" fxLayoutAlign="center stretch" style="padding: 16px;">
+
+
+</div>
+<div fxLayout="" fxLayoutAlign="center stretch" style="padding: 16px;">
+
+
+</div>
+
+<div fxLayout="" fxLayoutAlign="center stretch" style="padding: 16px;">
+
+  <h1> Réserver votre ticket !</h1>
+  <!-- row -->
+
+</div>
+
+<div class="card-container">
+
+  <mat-card class="concert-card">
+    <div class="card-content">
+      <div fxLayout="row">
+        <div fxFlex="35"><img src="/concert1.jpg" alt="Concert" class="concert-image" /></div>
+
+        <div fxFlex="50">
+
+          <div class="concert-details">
+            <div class="concert-header">
+              <h2>{{ evenement.nomEvent }}</h2>
+              &nbsp;&nbsp;&nbsp;<span class="badge" [ngClass]="getStatutClass(evenement.statut)">
+                {{ evenement.statut }}
+              </span>
+            </div>
+
+            <p><strong>Lieu :</strong> {{ evenement.lieu }}</p>
+            <p><strong>Date :</strong> {{ evenement.date }}</p>
+            <p>{{ evenement.description }}</p>
+
+          </div>
+        </div>
+
+        <!-- Contenu -->
+
+      </div>
+      <!-- Image -->
+
+      <div class="concert-details">
+        <div class="ticket-section">
+          <div class="ticket-controls">
+            <button mat-icon-button color="warn" (click)="decrement()">
+              <mat-icon>remove</mat-icon>
+            </button>
+            <span>{{ quantiteDemandee }}</span>
+            <button mat-icon-button color="primary" (click)="increment()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+          <div class="ticket-price">
+            <p><strong>{{ quantiteDemandee }} Billet{{ quantiteDemandee > 1 ? 's' : '' }}</strong></p>
+            <p>{{ prixUnitaire * quantiteDemandee | number:'1.2-2' }} €</p>
+            <small class="disponibilite">
+              Places restantes : {{ evenement.capacite }}
+            </small>
+            <mat-hint *ngIf="quantiteDemandee === evenement.capacite" style="color: red;">
+                Capacité maximale atteinte !
+            </mat-hint>
+          </div>
+          <button mat-raised-button color="accent" class="reserve-btn">Réserver</button>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+
+
+</div>
+
