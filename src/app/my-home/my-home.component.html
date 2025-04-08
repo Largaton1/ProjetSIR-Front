@@ -1,0 +1,80 @@
+
+
+<!-- Content  -->
+
+<div class="home-hero">
+  <mat-card class="hero-card">
+    <h1>Événement à venir !</h1>
+    <p>Découvrez.</p>
+    <button mat-raised-button color="primary">En savoir plus</button>
+  </mat-card>
+</div>
+
+<!-- Content -->
+
+
+
+
+<!-- container -->
+<div fxLayout="" fxLayoutAlign="center stretch" style="padding: 16px;">
+
+  <!-- row -->
+  <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+
+    <!-- <h2>Liste des Event</h2>
+    <ul>
+      <li *ngFor="let evenement of events">
+        {{ evenement.nomEvent }} - {{ evenement.description }}
+      </li>
+    </ul> -->
+    <!-- col 1 -->
+    <div fxFlex="12"  >
+    </div>
+
+    <div fxFlex="25"  *ngFor="let evenement of events">
+      <mat-card class="example-card" appearance="outlined">
+
+        <div class="badge" [ngClass]="evenement.statut">
+          {{ evenement.statut }}
+        </div>
+
+        <img mat-card-image src="/concert1.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-header>
+          <mat-card-title>
+            <a (click)="goToDetails(evenement.id)" class="event-title" style="cursor: pointer; text-decoration: none;">
+              {{ evenement.nomEvent }}
+            </a>
+          </mat-card-title>
+
+        </mat-card-header>
+        <mat-card-content>
+          <p>Lieu: {{ evenement.lieu }}</p>
+          <p>Date: {{ evenement.date }}</p>
+          <p>
+            {{ evenement.description }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-flat-button  color="primary" (click)="goToDetails(evenement.id)">Voir Plus</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+
+
+    <div fxFlex="12">
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+<h3>Ajouter un Ticket</h3>
+<input [(ngModel)]="newEvent.nomEvent" placeholder="Titre">
+<input [(ngModel)]="newEvent.description" placeholder="Description">
+<button (click)="addEvent()">Ajouter</button>
+<p>my-home works!</p>
