@@ -3,18 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SidebarComponent } from './modules/shared/sidebar/sidebar.component';
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SidebarComponent
-
+    AppComponent
   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
