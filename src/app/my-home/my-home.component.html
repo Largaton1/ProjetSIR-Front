@@ -2,14 +2,23 @@
 
 <!-- Content  -->
 
-<div class="home-hero">
+<!-- <div class="home-hero">
   <mat-card class="hero-card">
     <h1>Événement à venir !</h1>
     <p>Découvrez.</p>
     <button mat-raised-button color="primary">En savoir plus</button>
   </mat-card>
+</div> -->
+<div class="home-hero">
+  <mat-card class="hero-card">
+    <h1>Événement à venir !</h1>
+    <h4>Ajouter vos événements en tant qu'Organisateur.</h4>
+    <div class="button-container">
+      <button mat-raised-button color="accent" [routerLink]="['/register-client']">Créer un  compte  Client</button>
+      <button mat-raised-button color="accent" [routerLink]="['/register-organisateur']">Créer un compte Organisateur</button>
+    </div>
+  </mat-card>
 </div>
-
 <!-- Content -->
 
 

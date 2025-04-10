@@ -19,13 +19,25 @@ import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatTabsModule} from '@angular/material/tabs';
 import { EvenementDetailsComponent } from './evenement-details/evenement-details.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginClientComponent } from './login-client/login-client.component';
+import { LoginOrganisateurComponent } from './login-organisateur/login-organisateur.component';
+import { RegisterClientComponent } from './register-client/register-client.component';
+import { RegisterOrganisateurComponent } from './register-organisateur/register-organisateur.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MyHomeComponent,
-    EvenementDetailsComponent
+    EvenementDetailsComponent,
+    LoginComponent,
+    RegisterComponent,
+    LoginClientComponent,
+    LoginOrganisateurComponent,
+    RegisterClientComponent,
+    RegisterOrganisateurComponent
   ],
   imports: [
     BrowserModule,

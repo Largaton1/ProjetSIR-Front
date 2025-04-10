@@ -1,0 +1,38 @@
+
+
+
+<div class="auth-container">
+  <mat-card class="auth-card">
+    <div class="auth-header">
+      <mat-icon class="auth-icon">person_add</mat-icon>
+      <h2>Créer un compte Admin</h2>
+    </div>
+
+    <form (ngSubmit)="register()" class="auth-form">
+      <mat-form-field appearance="fill">
+        <mat-label>Nom</mat-label>
+        <input matInput [(ngModel)]="user.nom" name="nom" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Prénom</mat-label>
+        <input matInput [(ngModel)]="user.prenom" name="prenom" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [(ngModel)]="user.email" name="email" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Mot de passe</mat-label>
+        <input matInput type="password" [(ngModel)]="user.password" name="password" required />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" class="btn-submit">S'inscrire</button>
+      <p class="switch-text">Déjà un compte Admin ? <a routerLink="/login">Se connecter</a></p>
+    </form>
+  </mat-card>
+</div>
+
+
