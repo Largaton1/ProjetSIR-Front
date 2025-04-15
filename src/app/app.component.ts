@@ -35,7 +35,11 @@ export class AppComponent {
   updateUserInfo() {
     if (this.authService.isLoggedIn()) {
       this.userName = this.authService.getUserName();
-    } else {
+    } else if (this.authService.isLoggedInClient()) {
+      this.userName = this.authService.getUserName();
+    } else if (this.authService.isLoggedInOrganisateur()) {
+      this.userName = this.authService.getUserName();
+    }else {
       this.userName = null;
     }
   }

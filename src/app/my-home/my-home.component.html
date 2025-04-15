@@ -14,8 +14,8 @@
     <h1>Événement à venir !</h1>
     <h4>Ajouter vos événements en tant qu'Organisateur.</h4>
     <div class="button-container">
-      <button mat-raised-button color="accent" [routerLink]="['/register-client']">Créer un  compte  Client</button>
-      <button mat-raised-button color="accent" [routerLink]="['/register-organisateur']">Créer un compte Organisateur</button>
+      <button mat-raised-button color="accent" [routerLink]="['/register-client']" *ngIf="!authService.isLoggedIn()">Créer un  compte  Client</button>
+      <button mat-raised-button color="accent" [routerLink]="['/register-organisateur']" *ngIf="!authService.isLoggedIn()">Créer un compte Organisateur</button>
     </div>
   </mat-card>
 </div>
