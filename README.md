@@ -1,75 +1,33 @@
-# ## Application de Vente de Tickets de Concert en Ligne
+# 🎟️ Application de Vente de Tickets de Concert en Ligne
 
-Ce site a été dévéloppé par le binôme Loïc Nassara & Cyril Kone
+Ce projet a été développé par le binôme **Loïc Nassara** & **Cyril Koné**.
 
-Un petit guide pour l'exploration du site.
+## Introduction
 
-Une fois sur la page d'accueil, vous verrez qu'il n'a aucun évévenement afficher sur la page d'accueil, ce que vous allez faire
-c'est de créer un compte Organisateur afin de pourvoir ajouter vos événements.
+Bienvenue ! Voici un petit guide pour explorer le site :
 
-Après avoir céer votre compte, cliquer sur Ajouter un événement dans la barre de menu, ensuite ajouter un évévenement, vous pouvez voir votre événement
-dans mes événement, elle ne sera pas affichée sur l'accueil parceque son statut est Enattente.
+- À votre arrivée sur la page d'accueil, aucun événement ne sera affiché.
+- Pour ajouter des événements, vous devez **créer un compte Organisateur**.
+- Une fois votre compte créé, cliquez sur **"Ajouter un événement"** dans la barre de menu.
+- Après avoir ajouté un événement, vous pourrez le retrouver dans **"Mes événements"**.
+- Notez que l'événement ne s'affichera pas immédiatement sur l'accueil, car son statut sera initialement **"En attente"**.
 
-Pour changer son statut, il va falloir créer un compte administrateur, vous allez vous déconnecter de votre compte organisateur, et cliquer sur la connexion Admin dans la barre de menu.
+### Validation des événements
 
-Une fois connecter en tant qu'admin, cliquer Listes événement, ensuite aller dans l'action pour changer le statut de vos événements, sauf Enattente, tous les autres statuts seront afficher sur l'accueil.
+- Pour changer le statut d'un événement, vous devez **créer un compte Administrateur**.
+- Déconnectez-vous de votre compte Organisateur, puis cliquez sur **"Connexion Admin"** dans la barre de menu.
+- Une fois connecté en tant qu'Administrateur :
+  - Accédez à **"Liste des événements"**.
+  - Modifiez le statut de l'événement depuis les actions disponibles.
+  - Tous les statuts sauf **"En attente"** rendront l'événement visible sur la page d'accueil.
 
-Merci !
+Merci pour votre utilisation et bonne navigation !
 
+---
 
+## 🛠️ Serveur de développement
 
-## Development server
-
-To start a local development server, run:
+Pour démarrer un serveur de développement local, exécutez :
 
 ```bash
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
