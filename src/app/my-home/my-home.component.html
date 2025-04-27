@@ -28,19 +28,15 @@
 <div fxLayout="" fxLayoutAlign="center stretch" style="padding: 16px;">
 
   <!-- row -->
-  <div fxLayout="row" fxLayoutGap="16px" fxLayoutAlign="start center">
+  <div fxLayout="row wrap" fxLayoutGap="30px" fxLayoutAlign="start center">
 
-    <!-- <h2>Liste des Event</h2>
-    <ul>
-      <li *ngFor="let evenement of events">
-        {{ evenement.nomEvent }} - {{ evenement.description }}
-      </li>
-    </ul> -->
-    <!-- col 1 -->
-    <div fxFlex="12"  >
+    <!-- <div fxFlex="12"  >
+    </div> -->
+    <div *ngIf="events.length === 0" style="text-align: center; font-size: 20px; margin-top: 20px;">
+      <br><h3>Aucun événement disponible pour le moment.</h3>
     </div>
 
-    <div fxFlex="25"  *ngFor="let evenement of events">
+    <div  fxFlex="100%" fxFlex.gt-xs="45%" fxFlex.gt-sm="30%" fxFlex.gt-md="22%"  *ngFor="let evenement of events">
       <mat-card class="example-card" appearance="outlined">
 
         <div class="badge" [ngClass]="evenement.statut">
@@ -66,24 +62,15 @@
         <mat-card-actions>
           <button mat-flat-button  color="primary" (click)="goToDetails(evenement.id)">Voir Plus</button>
         </mat-card-actions>
-      </mat-card>
+      </mat-card><br><br>
     </div>
 
 
 
-    <div fxFlex="12">
-    </div>
+    <!-- <div fxFlex="12">
+    </div> -->
 
   </div>
 </div>
 
 
-
-
-
-
-<h3>Ajouter un Ticket</h3>
-<input [(ngModel)]="newEvent.nomEvent" placeholder="Titre">
-<input [(ngModel)]="newEvent.description" placeholder="Description">
-<button (click)="addEvent()">Ajouter</button>
-<p>my-home works!</p>

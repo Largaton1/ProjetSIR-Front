@@ -20,6 +20,8 @@ export class RegisterComponent {
     this.authService.register(this.user).subscribe({
       next: (res) => {
         this.authService.saveUser(res);
+        // 🔥 Stocker l'admin retourné (avec ID)
+        localStorage.setItem('user', JSON.stringify(res));
         this.router.navigate(['/home']); // rediriger vers accueil
       },
       error: (err) => {

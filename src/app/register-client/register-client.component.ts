@@ -18,6 +18,8 @@ export class RegisterClientComponent {
     this.authService.registerClient(this.user).subscribe({
       next: (res) => {
         this.authService.saveUserClient(res);
+        // 🔥 Stocker le client retourné (avec ID)
+        localStorage.setItem('user', JSON.stringify(res));
         this.router.navigate(['/home']); // rediriger vers accueil
       },
       error: (err) => {

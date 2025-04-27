@@ -9,6 +9,13 @@ import { RegisterClientComponent } from './register-client/register-client.compo
 import { LoginOrganisateurComponent } from './login-organisateur/login-organisateur.component';
 import { RegisterOrganisateurComponent } from './register-organisateur/register-organisateur.component';
 import { guestGuard } from './guest.guard';
+import { AddEventComponent } from './add-event/add-event.component';
+import { authGuard } from './auth.guard';
+import { organisateurGuard } from './organisateur.guard';
+import { MesEvenementsComponent } from './mes-evenements/mes-evenements.component';
+import { AllEvenementsComponent } from './all-evenements/all-evenements.component';
+import { adminGuard } from './admin.guard';
+import { AProposComponent } from './a-propos/a-propos.component';
 
 const routes: Routes = [
   { path: 'home', component: MyHomeComponent },
@@ -20,6 +27,11 @@ const routes: Routes = [
 { path: 'register-client', component: RegisterClientComponent, canActivate: [guestGuard] },
 { path: 'login-organisateur', component: LoginOrganisateurComponent,canActivate: [guestGuard]},
 { path: 'register-organisateur', component: RegisterOrganisateurComponent, canActivate: [guestGuard] },
+{ path: 'add-event', component: AddEventComponent,  canActivate: [organisateurGuard] }, // 🔒 bloqué si pas connecté
+{ path: 'mes-evenements', component: MesEvenementsComponent, canActivate: [organisateurGuard] },
+{ path: 'all-evenements', component: AllEvenementsComponent, canActivate: [adminGuard] },
+{ path: 'a-propos', component: AProposComponent },
+
 
 ];
 

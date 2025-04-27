@@ -13,6 +13,7 @@ export class AppComponent {
 
   showToolbar = true;
   userName: string | null = null;
+  mobileMenuOpen = false;
 
   constructor(private router: Router, public authService: AuthService) {
     this.router.events.subscribe(event => {
@@ -48,5 +49,9 @@ export class AppComponent {
     this.authService.logout();
     this.userName = null;
     this.router.navigate(['/home']);
+  }
+
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
   }
 }

@@ -15,7 +15,7 @@ import { AuthService } from '../auth.service';
   providers: [TicketAPIServiceService, EvenementAPIServiceService, AuthService],
 })
 export class MyHomeComponent implements OnInit {
-  statut: 'Annule' | 'EnCours' | 'Termine' = 'EnCours';
+  statut: 'Annule' | 'Enattente' |'EnCours' | 'Termine' = 'EnCours';
   events: any[] = [];
   newEvent = { id: 0, nomEvent: '', description: '', lieu: '', capacite: 0, date: '', statut: ''};
   constructor( private ticketService: TicketAPIServiceService, private evenementService: EvenementAPIServiceService, private router: Router, public authService: AuthService) { }
@@ -33,7 +33,8 @@ export class MyHomeComponent implements OnInit {
 
   loadEvents(): void {
     this.evenementService.getEvents().subscribe(data => {
-      this.events = data;
+      // this.events = data;
+      this.events = data.filter(e => e.statut !== 'Enattente' && e.statut !== 'En attente');
     });
   }
 

@@ -6,27 +6,68 @@
       <span class="logo-text">E-<span class="bold-text">ticket</span></span>
     </a>
   </div>
+
+   <!-- Hamburger Button (seulement visible sur mobile) -->
+   <button mat-icon-button class="menu-button" (click)="toggleMobileMenu()">
+    <mat-icon>{{ mobileMenuOpen ? 'close' : 'menu' }}</mat-icon>
+  </button>
+
+  <!-- Menu normal pour desktop -->
   <div class="spacer"></div>
-  <nav class="navigation">
+  <nav class="navigation" *ngIf="!mobileMenuOpen">
     <a mat-button routerLink="/home" routerLinkActive="active-link">Accueil</a>
+    <a mat-button routerLink="/add-event" *ngIf="authService.isLoggedIn() && authService.getUserRole() === 'organisateur'">Ajouter un événement</a>
     <a mat-button routerLink="/login" routerLinkActive="active-link" *ngIf="!authService.isLoggedIn()">Connexion en Admin</a>
-    <a mat-button routerLink="/contact" routerLinkActive="active-link">Contact Us</a>
+    <a mat-button *ngIf=" authService.isLoggedIn() && authService.getUserRole() === 'organisateur'" routerLink="/mes-evenements">Mes Événements</a>
+    <a mat-button *ngIf=" authService.isLoggedIn() && authService.getUserRole() === 'admin'" routerLink="/all-evenements">Listes Événements</a>
+    <a mat-button routerLink="/a-propos" routerLinkActive="active-link">Apropos Binôme</a>
   </nav>
   <div class="spacer"></div>
-  <div class="search-container">
+  <div class="search-container" *ngIf="!mobileMenuOpen">
     <input type="text" placeholder="Search" class="search-input">
     <button mat-icon-button>
       <mat-icon>search</mat-icon>
     </button>
   </div>
   <div class="spacer"></div>
-  <div class="user-info" *ngIf="authService.isLoggedIn()">
+  <div class="user-info" *ngIf="authService.isLoggedIn() && !mobileMenuOpen">
     <div class="user-icon">
       <mat-icon>account_circle</mat-icon>
       <span class="user-name">{{ userName }}</span>
     </div>
     <button mat-button class="logout-btn" (click)="logout()">Déconnexion</button>
   </div>
+
+
+   <!-- Menu Mobile -->
+   <div class="mobile-menu" *ngIf="mobileMenuOpen">
+    <div class="spacer"></div>
+    <br><br>
+    <nav class="mobile-navigation">
+
+      <a mat-button routerLink="/home" routerLinkActive="active-link">Accueil</a>
+      <a mat-button routerLink="/add-event" *ngIf="authService.isLoggedIn() && authService.getUserRole() === 'organisateur'">Ajouter un événement</a>
+      <a mat-button routerLink="/login" routerLinkActive="active-link" *ngIf="!authService.isLoggedIn()">Connexion en Admin</a>
+      <a mat-button *ngIf=" authService.isLoggedIn() && authService.getUserRole() === 'organisateur'" routerLink="/mes-evenements">Mes Événements</a>
+      <a mat-button *ngIf=" authService.isLoggedIn() && authService.getUserRole() === 'admin'" routerLink="/all-evenements">Listes Événements</a>
+      <a mat-button routerLink="/a-propos" routerLinkActive="active-link">Apropos Binôme</a>
+    </nav>
+    <!-- <div class="mobile-search-container">
+      <input type="text" placeholder="Search" class="search-input">
+      <button mat-icon-button>
+        <mat-icon>search</mat-icon>
+      </button>
+    </div> -->
+    <div *ngIf="authService.isLoggedIn()" class="mobile-user-info">
+      <div class="user-icon">
+        <mat-icon>account_circle</mat-icon>
+        <span class="user-name">{{ userName }}</span>
+      </div>
+      <button mat-button class="logout-btn" (click)="logout()">Déconnexion</button>
+    </div>
+  </div>
+
+
 </mat-toolbar>
 <router-outlet></router-outlet>
 <!-- <app-my-home></app-my-home> -->

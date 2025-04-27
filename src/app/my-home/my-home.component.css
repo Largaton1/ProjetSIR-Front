@@ -117,8 +117,17 @@ mat-icon {
 
 /* card */
 .example-card {
-  max-width: 400px;
+  /* max-width: 400px;
+  position: relative; */
+  width: 100%;
+  min-width: 250px;
+  max-width: 350px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
+
 }
 
 .example-header-image {

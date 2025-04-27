@@ -19,6 +19,8 @@ export class RegisterOrganisateurComponent {
     this.authService.registerOrganisateur(this.user).subscribe({
       next: (res) => {
         this.authService.saveUserOrganisateur(res);
+        // 🔥 Stocker l'organisateur retourné (avec ID)
+        localStorage.setItem('user', JSON.stringify(res));
         this.router.navigate(['/home']); // rediriger vers accueil
       },
       error: (err) => {

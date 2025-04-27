@@ -1,0 +1,104 @@
+
+
+
+.title {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* .full-width-table {
+  width: 100%;
+  margin: 0 auto;
+} */
+
+.no-events {
+  text-align: center;
+  font-style: italic;
+  color: gray;
+  margin-top: 30px;
+}
+
+
+.container {
+  margin-top: 100px; /* Pour descendre sous la toolbar */
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  padding: 0 200px; /* Espace à gauche et à droite de toute la section */
+}
+
+.full-width-table {
+  width: 100%;
+  max-width: 1000px; /* limite pour ne pas que ça déborde trop */
+  border-radius: 16px;
+  overflow: hidden; /* Pour que le arrondi s'applique aussi à l'intérieur */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+
+.mat-header-cell, .mat-cell {
+  text-align: center;
+  padding: 12px 8px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+}
+
+.no-events {
+  margin-top: 50px;
+  font-style: italic;
+  color: #666;
+}
+
+
+.statut-encours {
+  color: white;
+  background-color: #4caf50;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.statut-attente {
+  color: black;
+  background-color: #ffc107;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.statut-annule {
+  color: white;
+  background-color: #f44336;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.statut-termine {
+  color: white;
+  background-color: #9e9e9e;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.statut-inconnu {
+  color: white;
+  background-color: #2196f3;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+}

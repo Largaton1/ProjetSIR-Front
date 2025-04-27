@@ -48,6 +48,7 @@ export class AuthService {
 
   saveUser(data: any) {
     localStorage.setItem('user', JSON.stringify(data));
+    localStorage.setItem('role', 'admin');
   }
 
   isLoggedIn() {
@@ -96,6 +97,7 @@ registerClient(data: any) {
 
 saveUserClient(data: any) {
   localStorage.setItem('user', JSON.stringify(data));
+  localStorage.setItem('role', 'client');
 }
 
 isLoggedInClient() {
@@ -134,6 +136,7 @@ registerOrganisateur(data: any) {
 
 saveUserOrganisateur(data: any) {
   localStorage.setItem('user', JSON.stringify(data));
+  localStorage.setItem('role', 'organisateur');
 }
 
 isLoggedInOrganisateur() {
@@ -145,5 +148,22 @@ logoutOrganisateur() {
 }
 
 
+
+getUserRole(): string | null {
+  return localStorage.getItem('role');
+}
+
+
+isAdmin() {
+  return this.getUserRole() === 'admin';
+}
+
+isClient() {
+  return this.getUserRole() === 'client';
+}
+
+isOrganisateur() {
+  return this.getUserRole() === 'organisateur';
+}
 
 }

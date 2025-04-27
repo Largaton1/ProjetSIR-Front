@@ -36,6 +36,8 @@ body {
   transition: color 0.3s;
 }
 
+
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -143,4 +145,91 @@ mat-icon {
 
 .logout-btn:hover {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.menu-button {
+  display: none; /* Caché sur desktop */
+}
+
+
+
+/* Media Queries pour la responsivité */
+
+@media (max-width: 768px) {
+
+
+
+
+
+  /* .mobile-search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    padding: 0 8px;
+  }
+
+  .search-input {
+    padding: 8px 8px;
+    border: none;
+    font-size: 14px;
+    outline: none;
+    background-color: transparent;
+  } */
+  /* .mobile-navigation a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+  } */
+
+  .mobile-menu {
+    display: block;
+    background-color: #022e5b;
+    padding: 10px;
+  }
+
+
+
+  .mobile-navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+    margin: 5px 0;
+    padding: 10px;
+
+  }
+
+
+
+  .spacer {
+    display: none;
+  }
+
+
+  .logo-container {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .menu-button {
+    display:block;
+    color: white;
+
+  }
+
+  .navigation,
+  .search-container,
+  .user-info {
+    display: none; /* On cache les éléments normaux */
+  }
+
+
 }

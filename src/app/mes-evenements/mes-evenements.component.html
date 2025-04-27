@@ -1,0 +1,61 @@
+
+<div class="container">
+  <h2 class="title">Mes Événements</h2>
+
+  <div *ngIf="evenements.length > 0; else noEvents">
+    <table mat-table [dataSource]="evenements" class="mat-elevation-z8 full-width-table">
+
+      <!-- Nom -->
+      <ng-container matColumnDef="nomEvent">
+        <th mat-header-cell *matHeaderCellDef> Nom Evenement</th>
+        <td mat-cell *matCellDef="let event"> {{ event.nomEvent }} </td>
+      </ng-container>
+
+      <!-- Date -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let event"> {{ event.date | date:'yyyy-MM-dd' }} </td>
+      </ng-container>
+
+      <!-- Lieu -->
+      <ng-container matColumnDef="lieu">
+        <th mat-header-cell *matHeaderCellDef> Lieu </th>
+        <td mat-cell *matCellDef="let event"> {{ event.lieu }} </td>
+      </ng-container>
+
+      <!-- Description -->
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description </th>
+        <td mat-cell *matCellDef="let event"> {{ event.description }} </td>
+      </ng-container>
+
+      <!-- Capacité -->
+      <ng-container matColumnDef="capacite">
+        <th mat-header-cell *matHeaderCellDef> Capacité </th>
+        <td mat-cell *matCellDef="let event"> {{ event.capacite }} </td>
+      </ng-container>
+
+      <!-- Statut -->
+      <ng-container matColumnDef="statut">
+        <th mat-header-cell *matHeaderCellDef> Statut </th>
+        <td mat-cell *matCellDef="let element">
+          <span [ngClass]="getStatutClass(element.statut)">
+            {{ element.statut }}
+          </span>
+        </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+  </div>
+  <div  style="text-align: center; font-size: 20px; margin-top: 20px;">
+    <br>Un évènement en <i>Enattente</i> doit être validé par l'administrateur.
+  </div>
+
+  <ng-template #noEvents>
+    <h4 class="no-events">Pas d'événement pour le moment.</h4>
+  </ng-template>
+</div>
