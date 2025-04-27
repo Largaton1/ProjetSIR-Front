@@ -1,4 +1,4 @@
-# Angularapp
+# ## Application de Vente de Tickets de Concert en Ligne
 
 Ce site a été dévéloppé par le binôme Loïc Nassara & Cyril Kone
 
