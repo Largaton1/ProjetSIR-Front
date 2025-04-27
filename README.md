@@ -1,6 +1,22 @@
 # Angularapp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.4.
+Ce site a été dévéloppé par le binôme Loïc Nassara & Cyril Kone
+
+Un petit guide pour l'exploration du site.
+
+Une fois sur la page d'accueil, vous verrez qu'il n'a aucun évévenement afficher sur la page d'accueil, ce que vous allez faire
+c'est de créer un compte Organisateur afin de pourvoir ajouter vos événements.
+
+Après avoir céer votre compte, cliquer sur Ajouter un événement dans la barre de menu, ensuite ajouter un évévenement, vous pouvez voir votre événement
+dans mes événement, elle ne sera pas affichée sur l'accueil parceque son statut est Enattente.
+
+Pour changer son statut, il va falloir créer un compte administrateur, vous allez vous déconnecter de votre compte organisateur, et cliquer sur la connexion Admin dans la barre de menu.
+
+Une fois connecter en tant qu'admin, cliquer Listes événement, ensuite aller dans l'action pour changer le statut de vos événements, sauf Enattente, tous les autres statuts seront afficher sur l'accueil.
+
+Merci !
+
+
 
 ## Development server
 
